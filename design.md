@@ -70,8 +70,6 @@ File Storage (uploads/)
 
 ## 3. API Documnetation
 
-## API Documentation
-
 ### 1. Upload a PDF
 
 **Endpoint**: /documents/upload
@@ -97,6 +95,85 @@ curl -X POST http://localhost:3000/documents/upload \
         "filesize": 4826699,
         "created_at": "2025-12-11T06:34:41.109Z"
     }
+}
+```
+
+##
+
+### 2. List All Documents
+
+**Endpoint**: /documents
+
+**Method**: GET
+
+```
+curl http://localhost:3000/documents
+
+```
+
+**Response**:
+
+```
+{
+    "message": "Documents fetched successfully",
+    "data": [
+        {
+            "id": 2,
+            "filename": "The_Dual-Edged_Sword_of_Social_Media.pdf",
+            "filepath": "uploads\\1765297181913-The_Dual-Edged_Sword_of_Social_Media.pdf",
+            "filesize": 6063152,
+            "created_at": "2025-12-09T16:19:44.558Z"
+        },
+        {
+            "id": 5,
+            "filename": "thesis 12.pdf",
+            "filepath": "uploads\\1765429072248-thesis 12.pdf",
+            "filesize": 1308329,
+            "created_at": "2025-12-11T04:57:54.379Z"
+        },
+        {
+            "id": 6,
+            "filename": "Question 1 There are two lines in the city Metro rail (Green line and Red line). Green line stations are A (1) 5.pdf",
+            "filepath": "uploads\\1765434877885-Question 1 There are two lines in the city Metro rail (Green line and Red line). Green line stations are A (1) 5.pdf",
+            "filesize": 4826699,
+            "created_at": "2025-12-11T06:34:41.109Z"
+        }
+    ]
+}
+```
+
+##
+
+### 3. Download a Document
+
+**Endpoint**: /documents/:id
+
+**Method**: GET
+
+```
+curl -O http://localhost:3000/documents/2
+```
+
+**Response**: File will get download.
+
+##
+
+### 4. Delete a Document
+
+**Endpoint**: /documents/:id
+
+**Method**: DELETE
+
+```
+curl -O http://localhost:3000/documents/2
+```
+
+**Response**: File will get deleted from DB and Server as well.
+
+```
+{
+    "message": "Document deleted successfully",
+    "file": "Question 1 There are two lines in the city Metro rail (Green line and Red line). Green line stations are A (1) 5.pdf"
 }
 ```
 
