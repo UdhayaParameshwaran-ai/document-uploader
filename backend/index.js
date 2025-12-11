@@ -5,9 +5,12 @@ import { upload } from "./utils/upload.js";
 import { eq } from "drizzle-orm";
 import path from "path";
 import fs from "fs";
+import cors from "cors";
 
 const app = express();
 const port = 3000;
+
+app.use(cors());
 
 //Upload the document
 app.post("/documents/upload", upload.single("file"), async (req, res) => {
