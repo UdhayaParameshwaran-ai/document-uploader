@@ -68,6 +68,38 @@ Frontend (React) ↔ Backend (Node + Express) ↔ PostgreSQL
 ↕
 File Storage (uploads/)
 
+## 3. API Documnetation
+
+## API Documentation
+
+### 1. Upload a PDF
+
+**Endpoint**: /documents/upload
+
+**Method:** POST
+
+**Type:** Multipart form-data
+
+```
+curl -X POST http://localhost:3000/documents/upload \
+  -F "file=@./sample.pdf"
+```
+
+**Response:**
+
+```
+{
+    "message": "PDF uploaded",
+    "file": {
+        "id": 6,
+        "filename": "Question 1 There are two lines in the city Metro rail (Green line and Red line). Green line stations are A (1) 5.pdf",
+        "filepath": "uploads\\1765434877885-Question 1 There are two lines in the city Metro rail (Green line and Red line). Green line stations are A (1) 5.pdf",
+        "filesize": 4826699,
+        "created_at": "2025-12-11T06:34:41.109Z"
+    }
+}
+```
+
 ## 4. Data flow description
 
 ### Q5. Step-by-Step Process (Upload & Download)
