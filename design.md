@@ -98,8 +98,6 @@ curl -X POST http://localhost:3000/documents/upload \
 }
 ```
 
-##
-
 ### 2. List All Documents
 
 **Endpoint**: /documents
@@ -142,8 +140,6 @@ curl http://localhost:3000/documents
 }
 ```
 
-##
-
 ### 3. Download a Document
 
 **Endpoint**: /documents/:id
@@ -155,8 +151,6 @@ curl -O http://localhost:3000/documents/2
 ```
 
 **Response**: File will get download.
-
-##
 
 ### 4. Delete a Document
 
